@@ -6,41 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<!--     <link rel="stylesheet" href="stylesheets/bootstrap/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" href="stylesheets/bootstrap/css/bootstrap-responsive.min.css" media="all" /> -->
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <section class="page-header">
       <h1 class="project-name">DNI Automation Documentation</h1>
-      <h2 class="project-tagline"></h2>
+      <h2 class="project-tagline">This documentation contains all information regarding how to run dni<br>automation and common errors observed while execution along with solution to fix.</h2>
     </section>
 
     <section class="main-content">
-<h2><a id="common-error" class="anchor" href="#common-error" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Common DNI Errors.</h2>
-<p>This documentation listed out common errors that sometimes occurs while executing automation script. In order to solve these errors please click on occured error link. This will navigate to the description of that error like What that error is, Why that happens and what is procedure to solve this error </p>
-<h4>
-<a class="anchor" href="#null-pointer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link">NullPointerException</span></a></h4>
-<h4>
-<a class="anchor" href="#mongo-socket-open-exception" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link">MongoSocketOpenException</span></a></h4>
+<h2><a id="automation-step" class="anchor" href="#automation-step" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Step to execute DNI automation</h2>
+<p>DNI automation is categorised in two parts first <b>DNI-Story</b> and second <b>DNI-Defect</b>. User can run any individual story and defect as per his need as well as he can run whole suite. User need to follow certain steps in order to run automation script. Please click on below links to get execution process for same.</p>
+&#x2192; &nbsp;<a aria-hidden="true" class="execute-dni anchor" href="#individual-defect"><span class="octicon octicon-link" aria-hidden="true">Execute any individual Defect or Story</span></a><br/>
+&#x2192; &nbsp;<a class="anchor execute-dni" href="#all-defect" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link">Execute all DNI Defects or DNI Stories</span></a><br/>
+&#x2192; &nbsp;<a class="anchor execute-dni" href="#desired-dni" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link">Execute multiple Defects or Stories</span></a><br/>
+<h3 class="heading-color">
+<a id="individual-defect" class="anchor" href="" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Execute any individual Defect or Story</h3>
+<p>In DNI Automation every individual defect or story is created with the class named as JIRA ID of that defect or story. In order to run any dni defect or dni story user need to execute that class.<br/> <b>For Example:</b> If user want to execute DNI-16 then he need to run file name as DNI_16.java</p>
+<h3 class="heading-color">
+<a id="all-defect" class="anchor" href="" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Execute all DNI Defects or DNI Stories</h3>
+<p>If user want to execute all dni defects and dni stories then he need to mention all packages in testng.xml suite<br/> <b>For Example:</b>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;suite name="example suite 1" verbose="1" &gt;
+&nbsp; &lt;test name="Regression suite 1" &gt;
+&nbsp;&nbsp;&nbsp; &lt;packages&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;package name="DNI_Defect" /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;package name="DNI_Story" /&gt;
+&nbsp;&nbsp; &lt;/packages&gt;
+ &lt;/test&gt;
+&lt;/suite&gt;</code></pre>
+</p>
 
-<h3>
+<h3 class="heading-color">
+<a id="desired-dni" class="anchor" href="" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Execute multiple Defects or Stories</h3>
+<p>If user want to execute multiple dni defects and dni stories then he need to include all files in testng.xml suite.<br/> <b>For Example:</b>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;suite name="DNI Suite" &gt;
+&nbsp; &lt;test name="DNI Defect" preserve-order="true" parallel="false" &gt;
+&nbsp;&nbsp;&nbsp; &lt;classes&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_108" /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_17" /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_45" /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;package name="DNI_Story" /&gt;
+&nbsp;&nbsp;&nbsp; &lt;classes /&gt;
+&nbsp; &lt;/test&gt;
+&nbsp; &lt;test name="DNI Story" preserve-order="true" parallel="false" &gt;
+&nbsp;&nbsp;&nbsp; &lt;classes&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_16" /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_69" /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;package name="DNI_Story" /&gt;
+&nbsp;&nbsp;&nbsp; &lt;classes /&gt;
+&nbsp; &lt;/test&gt;
+&lt;/suite&gt;</code></pre>
+<hr>
+
+
+<h2><a id="common-error" class="anchor" href="#common-error" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Common DNI Errors</h2>
+<p>This documentation listed out common errors that sometimes occurs while executing automation script. In order to solve these errors please click on error name(link) listed below. This will navigate to the description of that error. </p>
+&#x2192; &nbsp;<a class="anchor error-link" href="#null-pointer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link">NullPointerException</span></a><br/>
+&#x2192; &nbsp;<a class="anchor error-link" href="#mongo-socket-open-exception" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link">MongoSocketOpenException</span></a><br/>
+&#x2192; &nbsp;<a class="anchor error-link" href="#no-such-element" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link">NoSuchElementException</span></a><br/>
+&#x2192; &nbsp;<a class="anchor error-link" href="#assertion-error" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link">AssertionError</span></a><br/>
+</h4>
+
+<h3 class="heading-color">
 <a id="null-pointer" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NullPointerException</h3>
-<p><h5>Description: </h5> NullPointerException is a RuntimeException . In Java, a special null value can be assigned to an object reference. NullPointerException is thrown when an application attempts to use an object reference that has the null value.</p>
-<p><h5>Reason: </h5> This error mostly occurs when dni cookie not loaded probably because of slow internet connectivity.</p>
-<p><h5>Solution: </h5> In order to solve this error you need to wait until DNI cookie is loaded. Step Go to failed method and increase the Thread.sleep time after page load.</p>
+<p><h4>Description: </h4> NullPointerException is a RuntimeException . In Java, a special null value can be assigned to an object reference. NullPointerException is thrown when an application attempts to use an object reference that has the null value.</p>
+<p><h4>Reason: </h4> This error mostly occurs when dni cookie not loaded probably because of slow internet connectivity.</p>
+<p><h4>Solution: </h4> In order to solve this error you need to wait until DNI cookie is loaded. <b>Step:</b> Go to failed method and increase the Thread.sleep time after page load.</p>
 
-<h3>
+<h3 class="heading-color">
 <a id="mongo-socket-open-exception" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MongoSocketOpenException</h3>
 
-<p><h5>Description: </h5> This exception is thrown when there is an exception opening a Socket.</p>
-<p><h5>Reason: </h5> This error mostly occurs because of following reason:
+<p><h4>Description: </h4> This exception is thrown when there is an exception opening a Socket.</p>
+<p><h4>Reason: </h4> This error mostly occurs because of following reason:
 <ul>
   <li>when user is not able to connect to the mongodb.</li>
   <li>User is not connected to the VPN.</li>
   <li>VPN has not access to databse.</li>
 </ul>  
 </p>
-<p><h5>Solution: </h5> In order to solve this error you need to check following things:
+<p><h4>Solution: </h4> In order to solve this error you need to check following things:
 <ul>
   <li>VPN has access to databse.</li>
   <li>User is connected to the VPN.</li>
@@ -48,16 +98,48 @@
 </ul>  
 </p>
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>You can <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<h3 class="heading-color">
+<a id="no-such-element" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NoSuchElementException</h3>
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+<p><h4>Description: </h4> This exception is thrown by the nextElement method of an Enumeration to indicate that there are no more elements in the enumeration.</p>
+<p><h4>Reason: </h4> This error mostly occurs because of following reason:
+<ul>
+  <li>Element is not present on page.</li>
+  <li>Page is not loaded properly</li>
+  <li>Webpage is not present or expected webpage is not present at time of execution</li>
+</ul>  
+</p>
+<p><h4>Solution: </h4> In order to solve this error you need to check following things:
+<ul>
+  <li>Exception thrown for element is present on page.</li>
+  <li>Internet is working properly.</li>
+  <li>Expected webpage is present.</li>
+</ul>  
+</p>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
 
+<h3 class="heading-color">
+<a id="assertion-error" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AssertionError</h3>
+
+<p><h4>Description: </h4> AssertionErrors are thrown when assertions fail. Assertions fail because something the programmer believed to be true turns out not to be true.</p>
+<p><h4>Reason: </h4> This error mostly occurs because of following reason:
+<ul>
+  <li>Descripancy between expected result in actual result</li>
+</ul>  
+</p>
+<p><h4>Solution: </h4> In order to solve this error you need to check following things:
+<ul>
+  <li>Error in method code for which assertion has failed.</li>
+  <li>Bug in application.</li>
+  <li>Cerificate is not expected.</li>
+</ul>  
+</p>
+
+<h2>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h2>
+
+<p>Having trouble with run dni automation script please email our contact support and we’ll help you sort it out.</p>
       <footer class="site-footer">
       </footer>
     </section>
