@@ -34,8 +34,8 @@
 &lt;suite name="example suite 1" verbose="1" &gt;
 &nbsp; &lt;test name="Regression suite 1" &gt;
 &nbsp;&nbsp;&nbsp; &lt;packages&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;package name="DNI_Defect" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;package name="DNI_Story" /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;package name="DNI_Defect"/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;package name="DNI_Story"/&gt;
 &nbsp;&nbsp; &lt;/packages&gt;
  &lt;/test&gt;
 &lt;/suite&gt;</code></pre>
@@ -46,18 +46,18 @@
 <p>If user want to execute multiple dni defects and dni stories then he need to include all files in testng.xml suite.<br/> <b>For Example:</b>
 <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;suite name="DNI Suite" &gt;
-&nbsp; &lt;test name="DNI Defect" preserve-order="true" parallel="false" &gt;
+&nbsp; &lt;test name="DNI Defect" preserve-order="true" parallel="false"&gt;
 &nbsp;&nbsp;&nbsp; &lt;classes&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_108" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_17" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_45" /&gt;
-&nbsp;&nbsp;&nbsp; &lt;classes /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_108"/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_17"/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_45"/&gt;
+&nbsp;&nbsp;&nbsp; &lt;classes/&gt;
 &nbsp; &lt;/test&gt;
-&nbsp; &lt;test name="DNI Story" preserve-order="true" parallel="false" &gt;
+&nbsp; &lt;test name="DNI Story" preserve-order="true" parallel="false"&gt;
 &nbsp;&nbsp;&nbsp; &lt;classes&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_16" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_69" /&gt;
-&nbsp;&nbsp;&nbsp; &lt;classes /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_16"/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;class name="DNI_Defect.DNI_69"/&gt;
+&nbsp;&nbsp;&nbsp; &lt;classes/&gt;
 &nbsp; &lt;/test&gt;
 &lt;/suite&gt;</code></pre>
 <hr>
