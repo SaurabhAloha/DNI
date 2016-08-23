@@ -29,9 +29,18 @@
 &#x2192; &nbsp;<span>All you need are your programming language's IDE (which contains your Selenium commands) and a browser.</span><br/>
 <img src="http://www.guru99.com/images/simplified_webdriver_architecture.jpg"/> 
 <h3>Code Structure:</h3>
+<p>Code Structure of DNI automation is divided into three parts: 1. Common 2. DNI_Defect 3. DNI_Story<br/>
+<b>Common - </b> All common functions are wrapped in this section like initializing browser, initializing report, taking screenshot, uploading screenshot to global url, making rest api call, sending email and many more.<br/>
+<b>DNI_Defect - </b> DNI_Defect package contains all dni defects.<br/>
+<b>DNI_Story - </b> DNI_Story package contains all dni stories.
+</p>
 <img src="http://i.imgur.com/lJzHgFy.png"/>
-<h3>Logs and Reports</h3>
-<img src="http://i.imgur.com/M5Qc6GY.png"/>  
+<h3>Logs and Reports: </h3>
+<p>An html report is generated after the execution of dni automation. This html report contains information of every test and which operating system, java version are used while running automation. Also it contains screenshot of important point like which number is loaded and when test is failed. It also contains the graphical representation of failed and passed test cases.</p>
+<img src="http://i.imgur.com/M5Qc6GY.png"/>
+<h3>Email Structure: </h3>
+<p>After the execution of dni automation an email is triggered which contains the count of passed, failed and skipped tests. It also contains dni report and dni log attachment.</p>
+<img src="http://i.imgur.com/JfFsKYp.png"/>   
 <h2><a id="automation-step" class="anchor" href="#automation-step" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Step to execute DNI automation</h2>
 <p>DNI automation is categorised in two parts first <b>DNI-Story</b> and second <b>DNI-Defect</b>. User can run any individual story and defect as per his need as well as he can run whole suite. User need to follow certain steps in order to run automation script. Please click on below links to get execution process for same.</p>
 &#x2192; &nbsp;<a aria-hidden="true" class="execute-dni anchor" href="#individual-defect"><span class="octicon octicon-link" aria-hidden="true">Execute any individual Defect or Story</span></a><br/>
